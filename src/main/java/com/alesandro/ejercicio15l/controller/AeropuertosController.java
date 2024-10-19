@@ -388,7 +388,7 @@ public class AeropuertosController implements Initializable {
         colAnio.setCellValueFactory(cellData -> javafx.beans.binding.Bindings.createObjectBinding(() -> cellData.getValue().getAeropuerto().getAnio_inauguracion()));
         TableColumn<AeropuertoPublico, Integer> colCapacidad = new TableColumn<>("Capacidad");
         colCapacidad.setCellValueFactory(cellData -> javafx.beans.binding.Bindings.createObjectBinding(() -> cellData.getValue().getAeropuerto().getCapacidad()));
-        TableColumn<AeropuertoPublico, Integer> colFinanciacion = new TableColumn<>("Financiación");
+        TableColumn<AeropuertoPublico, Double> colFinanciacion = new TableColumn<>("Financiación");
         colFinanciacion.setCellValueFactory(new PropertyValueFactory("financiacion"));
         TableColumn<AeropuertoPublico, Integer> colTrabajadores = new TableColumn<>("Nº Trabajadores");
         colTrabajadores.setCellValueFactory(new PropertyValueFactory("num_trabajadores"));

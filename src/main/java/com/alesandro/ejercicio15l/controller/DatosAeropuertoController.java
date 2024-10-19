@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -114,7 +115,7 @@ public class DatosAeropuertoController implements Initializable {
                 // Aeropuerto Público
                 AeropuertoPublico aeropuertoPublico = (AeropuertoPublico) aeropuerto;
                 airport = aeropuertoPublico.getAeropuerto();
-                txtParam1.setText(aeropuertoPublico.getFinanciacion() + "");
+                txtParam1.setText(aeropuertoPublico.getFinanciacion().toString());
                 txtParam2.setText(aeropuertoPublico.getNum_trabajadores() + "");
             } else {
                 // Aeropuerto Privado
@@ -313,7 +314,7 @@ public class DatosAeropuertoController implements Initializable {
                 airport.setId(id_aeropuerto);
                 if (rbPublico.isSelected()) {
                     // Aeropuerto Público
-                    AeropuertoPublico aeropuertoPublico = new AeropuertoPublico(airport,Double.parseDouble(txtParam1.getText()),Integer.parseInt(txtParam2.getText()));
+                    AeropuertoPublico aeropuertoPublico = new AeropuertoPublico(airport, new BigDecimal(txtParam1.getText()),Integer.parseInt(txtParam2.getText()));
                     if (!DaoAeropuertoPublico.insertar(aeropuertoPublico)) {
                         alerta("Ha habido un error almacenando los datos. Por favor vuelva a intentarlo");
                         return false;
@@ -361,7 +362,7 @@ public class DatosAeropuertoController implements Initializable {
                 if (this.aeropuerto instanceof AeropuertoPublico) {
                     // Aeropuerto Público
                     AeropuertoPublico aeropuertoPublico = (AeropuertoPublico) this.aeropuerto;
-                    AeropuertoPublico newAirport = new AeropuertoPublico(airport,Double.parseDouble(txtParam1.getText()),Integer.parseInt(txtParam2.getText()));
+                    AeropuertoPublico newAirport = new AeropuertoPublico(airport,new BigDecimal(txtParam1.getText()),Integer.parseInt(txtParam2.getText()));
                     if (!DaoAeropuertoPublico.modificar(aeropuertoPublico,newAirport)) {
                         alerta("Ha habido un error almacenando los datos. Por favor vuelva a intentarlo");
                         return false;
