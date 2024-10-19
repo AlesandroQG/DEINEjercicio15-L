@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -388,7 +389,7 @@ public class AeropuertosController implements Initializable {
         colAnio.setCellValueFactory(cellData -> javafx.beans.binding.Bindings.createObjectBinding(() -> cellData.getValue().getAeropuerto().getAnio_inauguracion()));
         TableColumn<AeropuertoPublico, Integer> colCapacidad = new TableColumn<>("Capacidad");
         colCapacidad.setCellValueFactory(cellData -> javafx.beans.binding.Bindings.createObjectBinding(() -> cellData.getValue().getAeropuerto().getCapacidad()));
-        TableColumn<AeropuertoPublico, Double> colFinanciacion = new TableColumn<>("Financiación");
+        TableColumn<AeropuertoPublico, BigDecimal> colFinanciacion = new TableColumn<>("Financiación");
         colFinanciacion.setCellValueFactory(new PropertyValueFactory("financiacion"));
         TableColumn<AeropuertoPublico, Integer> colTrabajadores = new TableColumn<>("Nº Trabajadores");
         colTrabajadores.setCellValueFactory(new PropertyValueFactory("num_trabajadores"));
