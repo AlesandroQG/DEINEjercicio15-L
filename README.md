@@ -37,4 +37,4 @@ La estructura del proyecto es la siguiente:
             - `BorrarAvion.fxml`: Ventana para borrar aviones
             - `DatosAeropuerto.fxml`: Ventana para añadir un nuevo aeropuerto o editar uno existente
             - `Login.fxml`: Ventana para iniciar sesión en la aplicación
-        - `images`: Imágenes de la aplicación
+        - `imagenes`: Imágenes de la aplicación
